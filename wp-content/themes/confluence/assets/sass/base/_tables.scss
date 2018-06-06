@@ -1,0 +1,94 @@
+table {
+  border-collapse: collapse;
+  margin: $small-spacing 0;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 15px;
+}
+
+th {
+  color: $dark;
+  font-weight: 700;
+  padding: $small-spacing;
+  text-align: left;
+}
+
+td {
+  padding: $small-spacing;
+}
+
+tr {
+  &:nth-child(2n) {
+    background: $grey;
+  }
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+
+
+
+// Accordion
+.panel-group .panel {
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 15px;
+}
+
+.panel {
+  box-shadow: none;
+}
+
+.panel-default > .panel-heading {
+  background: $grey;
+  border-radius: 0;
+  border: 0;
+}
+
+.panel-heading {
+  padding: 0;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border: 0;
+}
+
+.panel-title > a {
+  padding: $small-spacing;
+  padding-left: 70px;
+  display: block;
+  color: $dark;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    color: $dark;
+  }
+
+  &:before {
+    position: absolute;
+    font-family: FontAwesome;
+    content: '\f068';
+    top: 0;
+    left: 0;
+    width: 57px;
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+    font-size: 12px;
+    background: darken($grey, 5%);
+  }
+
+}
+
+.panel-title a {
+  &.collapsed {
+    &:before {
+      content: '\f067';
+    }
+  }
+}

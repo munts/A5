@@ -1,0 +1,25 @@
+.button,
+button {
+	padding: 12px 30px;
+	border-radius: 0px;
+	display: inline-block;
+	outline: 0;
+	border: 0;
+
+	&.big {
+		font-size: 17px;
+	}
+
+	&.default {
+		background: $dark;
+		color: $white;
+		&:hover {
+			background: lighten($dark, 5%);
+		}
+	}
+
+	&.accent {
+		background: $accent;
+		color: $white;
+	}
+}

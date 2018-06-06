@@ -1,0 +1,99 @@
+// Vertical Navigation
+.vertical-menu {
+	margin-top: 50px;
+
+	ul {
+		li {
+			position: relative;
+		}
+
+		> li {
+			&.current-menu-item {
+				a {
+					color: $accent;
+				}
+			}
+			ul {
+				display: none;
+				overflow: hidden;
+				padding-left: 10px;
+				a {
+					color: $grey-darker;
+					line-height: 30px;
+					&:hover {
+						color: $accent;
+					}
+				}
+			}
+		}
+	}
+
+	> ul > li > a {
+		color: $dark;
+		font-size: 16px;
+		line-height: 36px;
+		&:hover {
+			color: $accent;
+		}
+	}
+}
+
+
+
+// Main Menu
+.main-nav {
+	ul {
+		>li {
+			position: relative;
+			float: left;
+			display: block;
+
+			&.current-menu-item {
+				a {
+					background: $grey;
+				}
+			}
+			>a {
+				display: block;
+				padding: 25px 15px;
+				font-size: 17px;
+				color: $dark;
+				i {
+					margin-left: 0.3125em;
+					font-size: 14px;
+				}
+				&:hover {
+					background: $grey;
+				}
+			}
+			.sub-menu {
+				display: none;
+				position: absolute;
+		    min-width: 230px;
+		    top: 100%;
+		    left: 0;
+		    padding: 17px 0px 17px;
+				background: $dark;
+				li {
+					display: block;
+					float: none;
+					a {
+						color: $grey-dark;
+						line-height: 34px;
+				    display: block;
+				    padding: 0 24px;
+				    font-size: 15px;
+				    cursor: pointer;
+				    white-space: nowrap;
+				    background: transparent;
+				    &:hover {
+				    	color: $white;
+				    }
+					}
+				}
+			}
+		}
+	}
+
+	
+}
