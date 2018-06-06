@@ -1,0 +1,142 @@
+.mobile-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+  width: 100%;
+  z-index: 103;
+  background: $white;
+
+  .mobile-header-inner {
+    display: table;
+    width: 100%;
+    padding: 32px 0;
+	}
+	
+	.logo,
+	.mobile-menu-toggle {
+    display: table-cell;
+    vertical-align: middle;
+	}
+
+	.logo {
+		float: left;
+		width: 157px;
+		position: relative;
+    z-index: 104;
+	}
+
+	.mobile-menu-toggle {
+		float: right;
+    position: relative;
+    top: 3px;
+    right: 20px;
+    width: 1%;
+	}
+
+}
+
+
+#toggle-nav {
+	padding: 3px 5px;
+  position: absolute;
+  z-index: 9999;
+  width: 24px;
+  height: 17px;
+  background: transparent;
+  margin: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  > span {
+  	background: #131313;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform-origin: center center 0;
+    transition: all 150ms ease;
+  }
+
+  .top-line {
+    top: 0;
+  }
+
+  .middle-line {
+  	top: 50%;
+    margin-top: -1px;
+  }
+
+  .bottom-line {
+  	top: 100%;
+  }
+
+  &.active {
+  	.top-line {
+  		top: 50%;
+    	transform: rotateZ(45deg);
+  	}
+
+  	.middle-line {
+  		opacity: 0;
+  	}
+
+  	.bottom-line {
+  		top: 50%;
+	    transform: rotateZ(-45deg);
+  	}
+  }
+}
+
+
+.mobile-navigation {
+	padding-top: 80px;
+	display: none;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: $white;
+  -webkit-overflow-scrolling: touch;
+
+	ul {
+		li {
+	    position: relative;
+    	z-index: 10;
+
+    	.sub-menu {
+    		display: none;
+    		padding-left: 20px;
+    	}
+		}
+
+		li.dropdown-open .expander > i {
+			&:before {
+				content: "\4b";
+			}
+		}
+	}
+
+	.expander {
+		font-size: 20px;
+		position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    text-align: right;
+	}
+
+	a {
+		font-size: 16px;
+		border-bottom: 1px solid $border-color;
+    color: $grey-darker;
+    padding: 15px 0;
+    display: block;
+    position: relative;
+    line-height: 18px;
+	}
+}

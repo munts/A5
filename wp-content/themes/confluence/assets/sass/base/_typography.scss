@@ -1,0 +1,65 @@
+body {
+
+}
+
+::selection {
+    background: $accent;
+    color: $white;
+  }
+
+.portfolio-page {
+  
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: $dark;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+p {
+  margin: 0 0 $small-spacing;
+  &.small {
+    font-size: 13px;
+  }
+
+  &.headline {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+}
+
+a {
+  color: $accent;
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($accent, 15%);
+    text-decoration: none;
+  }
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+blockquote {
+  color: $dark;
+}

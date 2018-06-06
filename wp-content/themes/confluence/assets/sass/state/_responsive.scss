@@ -1,0 +1,43 @@
+@media (max-width: 1200px) {
+	.projects-full-holder .project-entry-1 {
+		width: 50%;
+	}
+}
+
+
+@media (max-width: $screen-md) {
+	.main-header-left {
+		display: none;
+	}
+
+	.side-menu-right .site-wrapper {
+		padding-right: 0;
+	}
+
+	.side-menu-left .site-wrapper {
+		padding-left: 0;
+	}
+
+	.service-title-only {
+		margin-top: $small-spacing;
+	}
+
+}
+
+@media (min-width: $screen-md) {
+
+
+}
+
+
+@media (max-width: $screen-sm) {
+	.projects-full-holder .project-entry-1 {
+		width: 100%;
+	}
+}
+
+
+
+@media (max-width: $screen-xs) {
+	
+}

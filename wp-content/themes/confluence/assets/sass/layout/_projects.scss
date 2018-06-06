@@ -1,0 +1,141 @@
+// Projects full width
+.projects-full-holder {
+  width: 100%;
+  margin: 0;
+  display: block;
+
+	.project-entry-1 {
+    width: 24.99%;
+    margin: 0;
+    float: left;
+    margin-bottom: 0;
+	}
+
+}
+
+.project-entry-1 {
+  margin-bottom: 30px;
+
+  .image-holder {
+    position: relative;
+    z-index: 8;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      transition: opacity 0.35s, transform 0.35s;
+      transform: scale3d(1, 1, 1);
+    }
+
+    &:hover {
+      img {
+        opacity: .5;
+        transform: scale3d(1.05, 1.05, 1); 
+      }
+    }
+  }
+
+	.project-overlay {
+  	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $accent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms ease-in-out;
+  }
+
+  .project-title {
+  	position: absolute;
+  	bottom: $small-spacing;
+  	left: $small-spacing;
+  	width: 100%;  	
+  	color: $white;
+  	font-size: 22px;
+  	margin: 0;
+  	padding-right: $small-spacing;
+    padding-left: 10px;
+  	opacity: 0;
+  	z-index: 13;
+  	transition: all .15s 75ms cubic-bezier(.25,.46,.45,.94);
+  }
+
+  .overlay-triangle {
+    position: absolute;
+    top: -31px;
+    right: -31px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: $white;
+    opacity: .3;
+    z-index: 9;
+    transform: rotate(-45deg) translate(16px);
+    transition: transform .3s ease-out;
+  }
+
+  &:hover {
+  	.project-title {
+  		opacity: 1;
+  		transform: translateY(-50%);
+  	}
+  	.project-overlay {
+  		opacity: .75;
+  		visibility: visible;
+  	}
+  	.overlay-triangle {
+  		transform: rotate(-45deg) translate(0);
+  	}
+  }
+}
+
+
+
+// Small Projects Thumbnail
+.small-projects {
+	.thumb {
+		width: 30%;
+		float: left;
+		margin-right: 3%;
+		margin-bottom: 8px;
+
+		img {
+			width: 100%;
+			display: block;
+      border-radius: 3px;
+      transition: opacity 0.35s, transform 0.35s;
+      transform: scale3d(1, 1, 1);
+		}
+    &:hover {
+      img {
+        opacity: .5;
+        transform: scale3d(1.05, 1.05, 1); 
+      }
+    }
+	}
+}
+
+
+// Projects Filter
+.projects-filter {
+  font-size: 16px;
+  li {
+    display: inline-block;
+    margin-right: $base-spacing;
+    &:last-child {
+      margin: 0;
+    }
+
+    a {
+      display: inline-block;
+      color: $grey-darker;
+      &:hover,
+      &.active {
+        color: $dark;
+        border-bottom: 1px solid $dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.form-control {
+	border: 1px solid $border-color;
+	background: $white;
+	padding: 12px;
+	height: auto;
+	border-radius: 0;
+	margin-bottom: $small-spacing + 10;
+	&:focus {
+		box-shadow: none;
+		border-color: darken($border-color, 10%);
+	}
+}
+
+.form-half {
+	position: relative;
+	width: 46%;
+	margin-left: auto;
+	margin-right: auto;
+}
