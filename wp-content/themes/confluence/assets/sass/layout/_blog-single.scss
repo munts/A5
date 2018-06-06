@@ -1,0 +1,174 @@
+.tags {
+	.blog-single & {
+		margin-top: 35px;
+	}
+	
+	a {
+		display: inline-block;
+		margin-left: 5px;
+		background: $grey;
+		color: $dark;
+		padding: 5px 10px;
+		border-radius: 4px;
+		&:hover {
+			background: darken($grey, 10%);
+		}
+	}
+}
+
+
+
+// Author Description
+.author-description {
+	padding: 30px;
+	border: 1px solid $border-color;
+
+	.author-avatar {
+		width: 200px;
+		float: left;
+	}
+
+	.author-description-text {
+		padding-left: $small-spacing;
+		overflow: hidden;
+
+		h4 {
+			margin-bottom: 0;
+		}
+
+		span {
+			display: block;
+			margin-bottom: 15px;
+		}
+	}
+
+}
+
+
+// Blog Single Navigation
+.blog-single-navigation {
+	padding: $base-spacing 0;
+	border-bottom: 1px solid $border-color;
+
+	.prev-post,
+	.next-post {
+		width: 50%;
+
+		a {
+			color: $grey-darker;
+		}
+
+		span, h5 {
+			display: inline-block;
+		}
+
+		h5 {
+			font-size: 18px;
+		}
+	}
+
+	.prev-post {
+		float: left;
+		text-align: left;
+		h5 {
+			margin-left: 5px;
+		}
+	}
+
+	.next-post {
+		float: right;
+		text-align: right;
+		h5 {
+			margin-right: 5px;
+		}
+	}
+
+}
+
+
+
+// Comments Wrapper
+.comment-title {
+	font-size: 22px;
+	margin-bottom: $base-spacing;
+}
+
+.comments-wrapper {
+	padding: $base-spacing 0;
+	border-bottom: 1px solid $border-color;
+	margin-bottom: $base-spacing;
+}
+
+.comment-list {
+	li {
+		border-bottom: 1px solid $border-color;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	> li {
+		&:last-child {
+			.comment {
+				padding-bottom: 0;
+			}
+		}
+		&:first-child {
+			.comment {
+				padding-top: 0;
+			}
+		}
+	}
+
+	.children {
+		padding-left: 100px;
+
+		li:first-child {
+			padding-top: 30px;
+			border-top: 1px solid $border-color;
+		}
+
+		li:last-child {
+			border-top: none;
+		}
+	}
+}
+
+.comment {
+	padding: 30px 0;
+	.comment-avatar {
+		float: left;
+		width: 70px;
+		border-radius: 50%;
+		overflow: hidden;
+		img {
+			width: 100%;
+		}
+	}
+	.comment-content {
+		overflow: hidden;
+		padding-left: 20px;
+
+		h5 {
+			font-size: 18px;
+			display: inline-block;
+		}
+
+		.comment-time {
+			margin-left: 15px;
+			color: $grey-dark;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+
+		.reply {
+			span {
+				margin-right: 5px;
+				font-size: 12px;
+			}
+		}
+	}
+}

@@ -1,0 +1,94 @@
+.single-project {
+
+	.image-holder {
+		position: relative;
+		margin-bottom: 30px;
+
+		.project-overlay {
+			background: rgba(26,26,26,.75);
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			opacity: 0;
+			transition: opacity .2s ease-out;
+		}
+
+		.link-holder {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			transform: translateY(-65%);
+			transition: transform .2s ease-out;
+			i {
+				font-size: 36px;
+				color: $white;
+			}
+		}
+		
+		&:hover {
+			.project-overlay {
+				opacity: 1;
+			}
+
+			.link-holder {
+				transform: translateY(-50%);
+			}
+		}
+
+	}
+
+	.project-info {
+
+		.project-title {
+			font-size: 36px;
+			margin-bottom: 30px;
+			margin-top: 0;
+		}
+
+		p {
+			font-size: 16px;
+		}
+	}
+}
+
+
+.single-project-nav {
+  height: 33px;
+  line-height: 35px;
+  text-align: center;
+  position: relative;
+  padding: 50px 0;
+
+  a {
+  	color: $grey-dark;
+  	&:hover,
+  	&:focus {
+  		color: $grey-darker;
+  	}
+  }
+
+  span {
+  	font-size: 24px;
+  }
+
+  .prev,
+  .back-to,
+  .next {
+  	display: inline-block;
+  	position: absolute;
+  	top: 37px;
+  	height: 33px;
+  }
+
+  .prev {
+  	left: 0;
+  }
+
+  .next {
+  	right: 0;
+  }
+}

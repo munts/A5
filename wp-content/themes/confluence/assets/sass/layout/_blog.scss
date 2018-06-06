@@ -1,0 +1,146 @@
+// Gird Posts
+.post-entry {
+	
+	.post-image {
+		overflow: hidden;
+		position: relative;
+		img {
+			width: 100%;
+			height: auto;
+		}
+		
+	}
+
+	.post-meta {
+		margin: $small-spacing 0;
+		span {
+			color: $grey-dark;
+			display: inline-block;
+			&:not(:last-of-type) {
+				margin-right: $small-spacing;
+			}
+			i {
+				margin-right: 5px;
+			}
+			a {
+				color: $grey-dark;
+				&:hover {
+					color: $grey-darker;
+				}
+			}
+		}
+	}
+
+	&.grid {
+		margin-bottom: $base-spacing;
+
+		.post-content {
+			// background: $grey;
+			// border: 1px solid $border-color;
+			background: #fefefe;
+			border-top: none;
+			padding: $small-spacing + 10;
+		}
+
+		.post-title {
+			font-size: 20px;
+			line-height: 1.46;
+			margin-top: 0;
+			a {
+				color: $dark;
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
+	}
+
+}
+
+article {
+	position: relative;
+	.filter-grayscale {
+		position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(0,0,0,.3);
+	  opacity: 0;
+	  transition: background .2s ease, opacity .5s ease;
+	}
+	&:hover {
+		.filter-grayscale {
+			opacity: 1;
+		}
+	}
+}
+
+
+
+
+// Blog Standard
+.blog-standard {
+
+	.post-entry {
+		padding-bottom: 30px;
+		margin-bottom: 40px;
+		border-bottom: 1px solid $border-color;
+
+		.post-image {
+			margin-bottom: 25px;
+		}
+
+		.post-title {
+			font-size: 28px;
+			a {
+				color: $dark;
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
+	}
+}
+
+.post-entry.format-quote {
+	.quote-holder {
+		background: $grey;
+		padding: $base-spacing;
+		margin-bottom: 20px;
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}	
+}
+
+
+// Blog Pagination
+.blog-pagination {
+	ul {
+		li {
+			display: inline-block;
+			margin-right: 5px;
+			a {
+				width: 40px;
+				height: 40px;
+				display: block;
+				border-radius: 50%;
+				line-height: 40px;
+				background: $grey;
+				text-align: center;
+				font-size: 15px;
+				color: $dark;
+				&:hover {
+					color: $grey-darker;
+				}
+			}
+			&.active {
+				a {
+					background: $dark;
+					color: $white;
+				}
+			}
+		}
+	}
+}

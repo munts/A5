@@ -1,0 +1,168 @@
+// Service title only
+.service-title-only {
+	text-align: center;
+	padding: 30px;
+	margin-bottom: $small-spacing;
+	// margin-top: -46px;
+	margin-top: 60px;
+	background: $dark;
+	// background-image: linear-gradient(to bottom, rgba(0,0,0,.06), rgba(0,0,0,0));
+	a {
+		// color: $dark;
+		color: $white;
+		display: inline-block;
+		font-size: 18px;
+		position: relative;
+		&:after {
+			opacity: 0;
+			visibility: hidden;
+			content: '';
+			width: 100%;
+			height: 2px;
+			background: $accent;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			transform: translate3d(0, 5px, 0);
+			transition: all 300ms ease;
+		}
+		&:hover {
+			color: $accent;
+			&:after {
+				opacity: 1;
+				visibility: visible;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+
+
+// Service Icon
+.service-icon {
+	display: table;
+	width: 100%;
+	padding-left: 15px;
+	.icon-box{
+		width: 1px;
+		display: table-cell;
+		vertical-align: top;
+		i {
+			color: $dark;
+			font-size: 2em;
+		}
+	}
+	.service-content {
+		padding-left: $small-spacing;
+		display: table-cell;
+		vertical-align: top;
+		h4 {
+			font-size: 20px;
+			margin-top: 0;
+			margin-bottom: $small-spacing;
+		}
+	}
+}
+
+
+// Icon Style 1
+.icon-style-1 {
+	text-align: center;
+	margin-bottom: 30px;
+	i {
+		color: $grey-dark;
+		font-size: 45px;
+		margin-bottom: 30px;
+		display: inline-block;
+		line-height: 45px;
+	}
+	h3 {
+		margin-top: 0;
+		font-size: 20px;
+	}
+}
+
+
+
+// Services With Images
+.image-service {
+	margin-bottom: $base-spacing;
+
+	.thumb {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 10px;
+
+		img {
+      transition: opacity 0.35s, transform 0.35s;
+      transform: scale3d(1, 1, 1);
+    }
+
+    &:hover {
+      img {
+        opacity: .5;
+        transform: scale3d(1.05, 1.05, 1); 
+      }
+    }
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: $accent;
+			opacity: 0;
+	    visibility: hidden;
+	    transition: all 250ms ease-in-out;
+			i {
+				font-size: 24px;
+				color: $white;
+				position: absolute;
+				top: 50%;
+				width: 100%;
+				text-align: center;
+				left: 0;
+				transform: translateY(-50%);
+			}
+		}
+
+		&:hover {
+	  	.overlay {
+	  		opacity: .75;
+	  		visibility: visible;
+	  	}
+	  }
+	}
+
+	.service-content {
+		h3 {
+			font-size: 20px;
+			padding: 10px 0;
+			margin: 0;
+			a {
+				color: $dark;
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
+	}
+
+	p {
+		font-size: 15px;
+	}
+}
+
+
+// Service Image 2
+.service-image-2 {
+	img {
+		margin-bottom: 15px;
+	}
+	h4 {
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+}
