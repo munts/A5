@@ -1,0 +1,64 @@
+.page-title-wrapper {
+	position: relative;
+	background: $dark;
+
+	.page-title-bg {
+		position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: .2;
+	}
+
+	.page-title-inner {
+		display: table;
+		vertical-align: middle;
+		width: 100%;
+		padding: 140px 0;
+
+		
+		.page-title-content {
+			background: rgba($white, .05);
+			padding: $base-spacing;
+			border-radius: 4px;
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+			
+			h2 {
+				font-size: 40px;
+				color: $white;
+				margin-top: 0;
+			}
+
+			p {
+				font-size: 18px;
+				line-height: 1.6;
+				padding-top: $small-spacing / 2;
+				margin: 0;
+				color: $white;
+			}
+		}
+
+	}
+
+}
+
+.page-title-2 {
+	background: $grey;
+	padding: $base-spacing 0;
+
+	h2 {
+		font-size: 24px;
+		margin-top: 0;
+		margin-bottom: 8px;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+}

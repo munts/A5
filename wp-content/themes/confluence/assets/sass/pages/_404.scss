@@ -1,0 +1,52 @@
+.error-404 {
+	max-width: 100%;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 20px;
+	text-align: center;
+
+	.error-symbol {
+		font-size: 65px;
+		color: $dark;
+	}
+
+	.error-text {
+		margin-bottom: 60px;
+		h2 {
+			font-size: 45px;
+		}
+		p.subtitle {
+			font-size: 18px;
+		}
+	}
+
+	.error-form {
+		margin-top: 60px;
+
+		a {
+			color: $dark;
+			margin-top: 10px;
+			// font-size: 20px;
+			i {
+				// font-size: 12px;
+			}
+		}
+
+		form {
+			position: relative;
+			button {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 10px 15px;
+				border: 0;
+				background: transparent;
+				&:focus {
+					outline: none;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}

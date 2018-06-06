@@ -1,0 +1,44 @@
+.site-footer {
+
+	.widgetized-area {
+		background: $dark;
+		padding: $base-spacing 0;
+
+		.widget {
+			margin-bottom: $small-spacing;
+			a {
+				color: $grey-dark;
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+
+		.widget-title {
+			font-size: 18px;
+			color: $white;
+			margin-bottom: $base-spacing;
+		}
+
+		.quick-links {
+			ul {
+				li {
+					
+					&:before {
+						font-family: FontAwesome;
+						margin-right: 5px;
+						content: '\f105';
+					}
+				}
+			}
+		}
+
+		
+	}
+
+	.copyright {
+		background: darken($dark, 7%);
+		padding: $small-spacing 0;
+	}
+
+}

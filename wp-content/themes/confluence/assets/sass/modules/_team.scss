@@ -1,0 +1,51 @@
+.team-entry {
+	margin-bottom: $base-spacing;
+	.team-details {
+		text-align: center;		
+		h4 {
+			font-size: 20px;
+			margin-bottom: 0px;
+		}
+	}
+	.team-thumb {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 15px;
+		background: $dark;
+
+		img {
+			width: 100%;
+			height: auto;
+			backface-visibility: hidden;
+			transition: opacity 0.35s, transform 0.35s;
+			transform: scale3d(1, 1, 1);
+		}
+
+		&:before {
+			position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background: rgba(255, 255, 255, 0.25);
+	    content: '';
+	    transition: transform 0.6s;
+	    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+	    opacity: 0;
+	    backface-visibility: hidden;
+		}
+
+		&:hover {
+			img {
+				opacity: 0.7;
+	    	transform: scale3d(1.05, 1.05, 1); 
+			}
+
+			&:before {
+		    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+		    opacity: 1;
+			}
+		}
+
+	}
+}

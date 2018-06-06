@@ -1,0 +1,11 @@
+.content-block {
+    border:1px solid #eee;
+    padding:3px;
+    background:#ccc;
+    max-width:250px;
+    float:right;
+    text-align:center;
+}
+.content-block:after {
+    clear:both;
+}

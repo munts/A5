@@ -1,0 +1,17 @@
+.fadeInCdb {
+  -webkit-animation-name: fadeInCdb;
+  -moz-animation-name: fadeInCdb;
+  -o-animation-name: fadeInCdb;
+  animation-name: fadeInCdb;
+}
+
+@keyframes fadeInCdb {
+  0% {
+    top: 40px;
+    opacity: 0;
+	}
+	100% {
+		top: 0;
+    opacity: 1;
+	}
+}
