@@ -101,3 +101,4 @@ wp-content/themes/twenty*/
 node_modules/
 
 
+/.idea/deployment.xml
