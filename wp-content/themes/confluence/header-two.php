@@ -21,45 +21,56 @@
     <i class="icon-arrow-up"></i>
 </a>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="https://schema.org/BlogPosting" />
 
 <div class="site-wrapper bmd-layout-container" itemprop="mainEntityOfPage">
-    <header class="header-type-1 hidden-sm hidden-xs">
+
+    <header class="header-type-1">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <div class="header-navigation">
-                        <div class="logo-top">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                <img src="<?= $site_logo; ?>" alt="logo" class="img-responsive" style="max-width: 45%;">
-                            </a>
-                        </div>
-                    </div>
-                </div> <!-- /.col-md-12 -->
-                <div class="col-md-8">
-                        <div class="main-menu">
-                            <nav class="main-nav">
-                                <div class="collapse navbar-collapse nav-primary" id="navbar">
-                                    <?php echo a5_nav(); ?>
+                        <?php if ( has_nav_menu( 'frontpage-menu' ) ) : ?>
+                            <nav id="site-navigation" class="navbar navbar-default navbar-fixed-top" role="navigation" aria-label="">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="cws-navbar-inner">
+                                            <div class="cws-top-bar">
+                                                <div class="col-sm-6 phone">
+                                                    <strong>P: <a href="tel:9706881446">(970)-688-1446</a></strong>
+                                                </div>
+
+                                                <div class="col-sm-6 email">
+                                                    <strong>E: <a href="mailto:steve@a5adventures.com">steve@a5adventures.com</a></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </nav> <!-- End Menu -->
-                        </div>
-                        <!--<div class="header-right">
-                            <div class="social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-youtube"></i></a>
-                            </div>
-                        </div>-->
+                                <div class="container">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <?php if ($site_logo != '') {?>
+                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
+                                                <img class="img-responsive logo" style="max-width:45%;" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
+                                            </a>
+                                        <?php }; ?>
+
+                                    </div>
+                                    <div id="navbar" class="navbar-collapse collapse navbar-right">
+                                        <?php echo a5_nav(); ?>
+                                    </div>
+                                </div>
+                            </nav><!-- .main-navigation -->
+                        <?php endif; ?>
                     </div>
                 </div> <!-- /.col-md-12 -->
             </div> <!-- /.row -->
-            <div class="row search-bar">
-                <div class="col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
-                    <?php get_search_form(); ?>
-                </div><!--  .col-md-8 -->
-            </div><!--  .row -->
         </div> <!-- /.container -->
     </header> <!-- /.header-type-1 -->
     <!-- /Header Content -->

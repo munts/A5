@@ -55,21 +55,21 @@ add_action('wp_enqueue_scripts', 'a5_styles');
 function a5_scripts() {
     wp_enqueue_script('tether', get_template_directory_uri() . '/assets/js/joinable/tether.min.js', array(), '1.0.0', true );
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '1.0.0', true );
-    wp_enqueue_script('animsition', get_template_directory_uri() . '/assets/js/joinable/animsition.min.js', array(), '1.0.0', true );
-    wp_enqueue_script('auto-grow', get_template_directory_uri() . '/assets/js/joinable/autogrow.min.js', array(), '1.0.0', true );
-    wp_enqueue_script('hover-intent', get_template_directory_uri() . '/assets/js/joinable/hoverIntent.js', array(), '1.0.0', true );
+    //wp_enqueue_script('animsition', get_template_directory_uri() . '/assets/js/joinable/animsition.min.js', array(), '1.0.0', true );
+    //wp_enqueue_script('auto-grow', get_template_directory_uri() . '/assets/js/joinable/autogrow.min.js', array(), '1.0.0', true );
+    //wp_enqueue_script('hover-intent', get_template_directory_uri() . '/assets/js/joinable/hoverIntent.js', array(), '1.0.0', true );
     wp_enqueue_script('isotope', get_template_directory_uri() . '/assets/js/joinable/isotope.pkgd.min.js', array(), '1.0.0', true );
     wp_enqueue_script('nice-scroll', get_template_directory_uri() . '/assets/js/joinable/jquery.nicescroll.min.js', array(), '1.0.0', true );
     wp_enqueue_script('imagesloaded', get_template_directory_uri() . '/assets/js/joinable/imagesloaded.pkgd.min.js', array(), '1.0.0', true );
     wp_enqueue_script('parallax', get_template_directory_uri() . '/assets/js/joinable/parallax.js', array(), '1.0.0', true );
     wp_enqueue_script('nivo', get_template_directory_uri() . '/assets/js/joinable/nivo-lightbox.min.js', array(), '1.0.0', true );
-    wp_enqueue_script('mmenu', get_template_directory_uri() . '/assets/js/jquery.mmenu.all.min.js', array(), '1.0.0', true );
+    //wp_enqueue_script('mmenu', get_template_directory_uri() . '/assets/js/jquery.mmenu.all.min.js', array(), '1.0.0', true );
     wp_enqueue_script('owl', get_template_directory_uri() . '/assets/js/joinable/owl.carousel.js', array(), '1.0.0', true );
     wp_enqueue_script('plugins', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '', true);
     wp_enqueue_script('settings', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '', true);
     /*** Easing javascript file */
-    wp_enqueue_script('onepage-easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), '', true);
-    wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js', array('jquery'), '', true);
+    //wp_enqueue_script('onepage-easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), '', true);
+    //wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js', array('jquery'), '', true);
 
 }
 
@@ -93,12 +93,7 @@ function a5_setup() {
 
 add_action('after_setup_theme', 'a5_setup');
 
-add_filter( 'wp_nav_menu_items','add_search_box', 10, 2 );
-function add_search_box( $items, $args ) {
-    if( 'frontpage-menu' == $args->theme_location )
-        $items .= '<li class="menu-item search"><a href="#" class="search-toggle"><i class="fa fa-search"></i></a></li>';
-    return $items;
-}
+
 
 function wpb_mce_buttons_2($buttons) {
     array_unshift($buttons, 'styleselect');
@@ -108,88 +103,96 @@ add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
-/*
-* Callback function to filter the MCE settings
-*/
-
-function my_mce_before_init_insert_formats( $init_array ) {
-
-// Define the style_formats array
-
-    $style_formats = array(
-        /*
-        * Each array child is a format with it's own settings
-        * Notice that each array has title, block, classes, and wrapper arguments
-        * Title is the label which will be visible in Formats menu
-        * Block defines whether it is a span, div, selector, or inline style
-        * Classes allows you to define CSS classes
-        * Wrapper whether or not to add a new block-level element around any selected elements
-        */
-        array(
-            'title' => 'Bold Content Block',
-            'block' => 'span',
-            'classes' => 'bold-content-block',
-            'wrapper' => true,
-
-        ),
-        array(
-            'title' => 'Paragraph',
-            'block' => 'p',
-            //'classes' => 'bold-content-block',
-            'wrapper' => true,
-
-        )
-    );
-    // Insert the array, JSON ENCODED, into 'style_formats'
-    $init_array['style_formats'] = json_encode( $style_formats );
-
-    return $init_array;
-
-}
-// Attach callback to 'tiny_mce_before_init'
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
 function my_theme_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );
 }
 add_action( 'init', 'my_theme_add_editor_styles' );
 
-/*
-Add data-action="zoom" to images in the_content
-*/
-
-
-// Single images
-/*function add_zoom_image_attribute( $content ) {
-    global $post;
-    $pattern = "/<img(.*?)src=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-    //$replace = '<img class="pre-zoom3" src=$2$3.$4$5 data-action="zoom" style="width:25%; float:left; padding:0 10px; 10px 0;">';
-    $replace = '<img class="" src=$2$3.$4$5>';
-    $content = preg_replace( $pattern, $replace, $content );
-    return $content;
-}
-add_filter( 'the_content', 'add_zoom_image_attribute' );*/
-
-//remove_filter( 'the_content', 'wpautop' );
-
-
-/*function add_search_box( $items, $args ) {
-    $items .= '<li>' . get_search_form( false ) . '</li>';
-    return $items;
-}*/
-
-//add_theme_support('html5', array('search-form'));
-
 /**
  * Primary Menu Extras
  *
  */
-/*function ea_primary_menu_extras( $menu, $args ) {
-    if( 'primary' == $args->theme_location )
-        $menu .= '<li class="menu-item search"><a href="#" class="search-toggle"><i class="fa fa-search"></i></a>' . get_search_form( false ) . '</li>';
-    return $menu;
+class Main_Nav extends Walker_Nav_Menu {
+
+    /**
+     * Starts the list before the elements are added.
+     *
+     * Adds classes to the unordered list sub-menus.
+     *
+     * @param string $output Passed by reference. Used to append additional content.
+     * @param int    $depth  Depth of menu item. Used for padding.
+     * @param array  $args   An array of arguments. @see wp_nav_menu()
+     */
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        // Depth-dependent classes.
+        $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+        $display_depth = ( $depth + 1); // because it counts the first submenu as 0
+        $classes = array(
+            'dropdown-menu',
+            ( $display_depth % 2  ? 'menu-odd' : 'menu-even' ),
+            ( $display_depth >=2 ? 'sub-sub-menu' : '' ),
+            'menu-depth-' . $display_depth
+        );
+        $class_names = implode( ' ', $classes );
+
+        // Build HTML for output.
+        $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
+    }
+
+    /**
+     * Start the element output.
+     *
+     * Adds main/sub-classes to the list items and links.
+     *
+     * @param string $output Passed by reference. Used to append additional content.
+     * @param object $item   Menu item data object.
+     * @param int    $depth  Depth of menu item. Used for padding.
+     * @param array  $args   An array of arguments. @see wp_nav_menu()
+     * @param int    $id     Current item ID.
+     */
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        global $wp_query;
+        $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
+
+        // Depth-dependent classes.
+        $depth_classes = array(
+            ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
+            ( $depth >=2 ? 'sub-sub-menu-item' : '' ),
+            ( $depth % 2 ? 'menu-item-odd' : 'menu-item-even' ),
+            'menu-item-depth-' . $depth
+        );
+        $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
+
+        // Passed classes.
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
+        $class_names = str_replace( 'menu-item-has-children', 'menu-item-has-children dropdown', $class_names );
+
+        // Build HTML.
+        $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
+
+        // Link attributes.
+        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+        $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
+        if ( $this->has_children ) {$attributes .= ' data-toggle="dropdown"';}
+
+        // Build HTML output and pass through the proper filter.
+        $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+            $args->before,
+            $attributes,
+            $args->link_before,
+            apply_filters( 'the_title', $item->title, $item->ID ),
+            $args->link_after,
+            $args->after
+        );
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
 }
-add_filter( 'wp_nav_menu_items', 'ea_primary_menu_extras', 10, 2 );*/
 
 // Register menus
 register_nav_menus(array(
@@ -198,19 +201,12 @@ register_nav_menus(array(
 );
 
 function a5_nav() {
-        wp_nav_menu(array(
+        wp_nav_menu( array(
             'theme_location' => 'frontpage-menu',
-            'depth' => 10,
-            'menu_class' => 'nav navbar-nav navbar-right sf-menu sf-js-enabled sf-shadow nav-menu',
-            'menu_id' => 'one_menu',
-            'container' => 'div',
-            'container_class' => 'collapse navbar-collapse',
-            'link_before' => '<span>',
-            'link_after' => '</span>',
-            'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'  => new WP_Bootstrap_Navwalker()
-            )
-        );
+            'menu_class'     => 'nav navbar-nav navbar-right',
+            'walker' => new Main_Nav(),
+            'depth' => 3
+        ) );
 }
 
 
