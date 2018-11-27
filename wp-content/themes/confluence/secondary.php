@@ -15,7 +15,7 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
     <div class="fullwidthbanner-container" style="width:100%; height:80%;">
         <div class="row">
 
-            <div class="col-xs-12" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+            <div class="col-xs-12" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;max-height:600px;">
 
                 <?php
 
@@ -25,7 +25,7 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
                     putRevSlider( $slider_id );
                 }
                 else
-                    echo '<img src="'. $imageUrl .'" style="width:100%;" class="img-responsive">';
+                    echo '<img src="'. $imageUrl .'" style="width:100%;margin-top:-150px;" class="img-responsive">';
 
                 ?>
 
