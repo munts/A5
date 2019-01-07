@@ -35,8 +35,6 @@
                     }
                 </script>
 
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqmzh0V1FRIbjJZ8oqJfE6AZnAX94XuRQ&callback=myMap"></script>
-
             </div>
         </div><div class="row">
             <div class="col-xs-12">
