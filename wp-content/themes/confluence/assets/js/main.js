@@ -107,13 +107,13 @@
     });
   });
 
-  $(document).ready(function(){
+  /*$(document).ready(function(){
     $('a').nivoLightbox();
   });
 
   $('.lightbox').nivoLightbox({
     keyboardNav: true,
-  });
+  });*/
 
 
   //$(".video-content").fitVids();
@@ -219,6 +219,74 @@
       }
     }
   });
+
+    // magnific popup
+
+    $(document).ready(function() {
+
+
+        $('.filter-btn').on('click', function(e){
+            e.preventDefault();
+            var groupID = $(this).data('groupid');
+            if(groupID == -1){
+                $('.galleryItem').magnificPopup({
+                    type: 'image',
+                    image: {
+                        titleSrc: function(item) {
+                            return item.el.attr('title') + '<small>'+ item.el.data('desc') +'</small>';
+                        }},
+                    closeOnContentClick: true,
+                    closeBtnInside: false,
+                    gallery: { enabled:true }
+                });
+            }
+            else{
+                $("a[data-group*='"+groupID+"']").magnificPopup({
+                    type: 'image',
+                    closeOnContentClick: true,
+                    closeBtnInside: false,
+                    gallery: { enabled:true },
+                    image: {
+                        titleSrc: function(item) {
+                            return item.el.attr('title') + '<small>'+ item.el.data('desc') +'</small>';
+                        }}
+                });
+            }
+        });
+
+        $('.projectGalleryItem').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will open
+            type: 'image',
+            closeOnContentClick: true,
+            closeBtnInside: false,
+            gallery: { enabled:true }
+            // other options
+        });
+
+        $('.filter-all-btn').trigger('click');
+        /*var groups = {};
+        $('.galleryItem').each(function() {
+            var id = parseInt($(this).attr('data-group'), 10);
+
+            if(!groups[id]) {
+                groups[id] = [];
+            }
+
+            groups[id].push( this );
+        });
+
+        $.each(groups, function() {
+
+            $(this).magnificPopup({
+                type: 'image',
+                closeOnContentClick: true,
+                closeBtnInside: false,
+                gallery: { enabled:true }
+            })
+
+        });*/
+
+    });
 
  /* $('#featured-activities .owl-carousel').owlCarousel({
     loop:true,
