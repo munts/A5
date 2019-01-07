@@ -16,7 +16,7 @@ Text Domain: confluence
  *    without disabling user zoom.
  */
 html {
-    font-family: sans-serif;
+    font-family: "Open Sans",Arial,sans-serif;
     /* 1 */
     -ms-text-size-adjust: 100%;
     /* 2 */
@@ -464,7 +464,7 @@ th {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Open Sans",Arial,sans-serif;
     font-size: 15px;
     font-weight:300;
     line-height: 1.6;
@@ -666,7 +666,7 @@ hr {
     line-height: 30px;
     font-weight: 400;
     color: rgb(255, 255, 255);
-    font-family: Karla;
+    font-family: "Open Sans",Arial,sans-serif;
     background-color: rgba(116, 201, 0, 0.7);
     visibility: inherit;
     transition: none;
@@ -954,7 +954,7 @@ blockquote {
     margin-bottom: 0;
 }
 
-h3.widget-title {font-family:'Roboto', sans-serif;font-weight: 300;}
+h3.widget-title {font-family: "Open Sans",Arial,sans-serif;font-weight: 300;}
 
 .site-footer .widgetized-area .quick-links ul li:before {
     font-family: FontAwesome;
@@ -1435,7 +1435,7 @@ article:hover .filter-grayscale {
       bottom: 10px;
       left: 20px;
       width: 88%;
-      font-family: 'Josefin Sans', sans-serif;
+    font-family: "Open Sans",Arial,sans-serif;
     font-weight:400;
       color:#ffffff;
       font-size: 16px;
@@ -1892,7 +1892,7 @@ div#slide-13-layer-3 {
     background: rgba(255,255,255,0.0);
     box-shadow: 0 0px 7px -1px rgba(0, 0, 0, 0.0);
 }
-.vertical-menu ul li {font-size: 1.4em; font-family: Roboto Slab;}
+.vertical-menu ul li {font-size: 1.4em; font-family: "Open Sans",Arial,sans-serif;}
 .full-width-container {width:100%;}
 /*.section-block {padding-left:260px;}*/
 a {
@@ -1967,7 +1967,7 @@ a:active, a:focus, a:hover {
 /*.view_grid .grid_box a:before{box-shadow: 0 -90px 100px -60px #000000 inset;position: absolute;top: 0px;bottom: 0px;left: 0px;right: 0px;content: '';}*/
 .view_grid .grid_box img{width: 100%;display: block;max-width: 100%;}
 .view_grid .grid_box .name_title{position: absolute;bottom: 20px;left: 10px;color: #fff;z-index: 9;font-size: 16px;}
-.view_grid .grid_box .hover-overlay {font-family: 'Josefin Sans', sans-serif;color: #000000;font-size: 16px;opacity: 0;padding: 10px;line-height: normal; height: 36px;font-weight: 400;left: 0px;position: absolute;bottom: 0px;right: 0px;background: rgba(255, 255, 255,0.8);transition: all ease 0.6s; -moz-transition: all ease 0.6s;-webkit-transition: all ease 0.8s;-o-transition: all ease 0.6s;-ms-transition: all ease 0.6s;}
+.view_grid .grid_box .hover-overlay {font-family: "Open Sans",Arial,sans-serif;color: #000000;font-size: 16px;opacity: 0;padding: 10px;line-height: normal; height: 36px;font-weight: 400;left: 0px;position: absolute;bottom: 0px;right: 0px;background: rgba(255, 255, 255,0.8);transition: all ease 0.6s; -moz-transition: all ease 0.6s;-webkit-transition: all ease 0.8s;-o-transition: all ease 0.6s;-ms-transition: all ease 0.6s;}
 .view_grid .grid_box a:hover .hover-overlay{opacity: 1;transition: all ease 0.6s; -moz-transition: all ease 0.6s;-webkit-transition: all ease 0.8s;-o-transition: all ease 0.6s;-ms-transition: all ease 0.6s;}
 
 .publication .hover-overlay {max-width:280px; margin:0 auto;color: #000000;font-size: 16px;opacity: 0;padding: 10px;line-height: normal; height: 60px;font-weight: 300;left: 0px;position: absolute;bottom: 0px;right: 0px;background: rgba(255, 255, 255,0.8);transition: all ease 0.6s; -moz-transition: all ease 0.6s;-webkit-transition: all ease 0.8s;-o-transition: all ease 0.6s;-ms-transition: all ease 0.6s;}
@@ -2379,7 +2379,7 @@ h3.gform_title {font-family: 'Open Sans', sans-serif;font-weight:300 !important;
     display: inline-block;
     padding: 10px 0 0;
     font-weight: 300;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Open Sans",Arial,sans-serif;
 }
 
 .copyright .social-icons {
@@ -2477,6 +2477,7 @@ footer p{color:#ffffff;}
 
 @media (max-width: 992px) {
     .hero-container {width:100%; height:55%;}
+
 }
 
 .owl-carousel {
@@ -2768,17 +2769,56 @@ button.owl-prev {
     top: 32px;
 }
 
+.container > .navbar-header, .container-fluid > .navbar-header {
+    width:40%;
+}
+
+.navbar-nav {
+    margin:0;
+}
+
+img.img-responsive.logo {
+    max-width: 50%;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #ea1f24;
+}
+
 
 @media (min-width: 768px) {
-    .container > .navbar-header, .container-fluid > .navbar-header {
-        max-width:40%;
-    }
+
     div#navbar {
         margin-top: 10px;
         width:60%;
     }
     .email {text-align: right;}
+    .navbar-header {width: 96%;}
 }
+
+@media (max-width: 1000px) {
+    .collapse {
+        display: none !important;
+    }
+    div#navbar.navbar-collapse.navbar-right.collapse.in {
+        display: block !important;
+    }
+    img.img-responsive.logo {
+        max-width: 40%;
+    }
+
+}
+@media (max-width: 1000px) {
+    .navbar-toggle {
+        display: block !important;
+        float:right;
+    }
+    .container > .navbar-header, .container-fluid > .navbar-header {
+        width:100%;
+    }
+    ul#menu-menu-1{background-color:#ffffff;}
+}
+
 @media (max-width: 767px) {
     .container > .navbar-header, .container-fluid > .navbar-header {
         max-width:100%;
@@ -2787,19 +2827,31 @@ button.owl-prev {
         margin-top: 10px;
         width:100%;
     }
-    .email {text-align: center;}
+    .email {text-align: center;color:#ffffff;}
+    .email a{color:#ffffff;}
     .phone {text-align: center;}
+    img.img-responsive.logo {
+        max-width: 35%;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-header {width: 40%;}
 }
 
 .navbar {
     min-height: 50px;
     margin-bottom: 0;
-    border: 1px solid transparent;
+    border: 0;
 }
 
 .cws-top-bar{
-    background-color: #f1f1f1 !important;
+    background-color: #000000 !important;
 }
+.email {color:#ffffff;}
+.email a{color:#ffffff;}
+
+img.img-responsive.logo {padding:5px 0;}
 
 /* =WordPress Core
 -------------------------------------------------------------- */
@@ -2909,6 +2961,21 @@ a img.aligncenter {
     width: auto;
     z-index: 100000;
     /* Above WP toolbar. */
+}
+
+.photos_gallery {float: left;margin-bottom: 40px;}
+.photos_gallery ul {margin: 5px 0px 0px -6px;padding: 0px;}
+.photos_gallery ul li {display: inline-block;width: 50%;float: left;padding: 2px 0px 0px 2px;max-height: 160px;min-height: 160px;overflow: hidden;}
+.photos_gallery ul li a {display: inline-block;width:100%;height: 100%;}
+.photos_gallery ul li a img {width:100%;height: 100%;}
+.photos_gallery li:nth-child(1) {height: 320px;max-height: 320px;overflow: hidden;width: 50%;}
+
+.navbar-default {
+    background-color: rgba(255,255,255,0.5);
+}
+.navbar-top {background-color:#000000;}
+.navbar-default .navbar-nav > li > a {
+    color: #000000;
 }
 
 

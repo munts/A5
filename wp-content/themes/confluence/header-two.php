@@ -32,38 +32,42 @@
                     <div class="header-navigation">
                         <?php if ( has_nav_menu( 'frontpage-menu' ) ) : ?>
                             <nav id="site-navigation" class="navbar navbar-default navbar-fixed-top" role="navigation" aria-label="">
-                                <div class="container">
+                                <div id="top-bar" class="container-fluid navbar-top">
                                     <div class="row">
-                                        <div class="cws-navbar-inner">
-                                            <div class="cws-top-bar">
-                                                <div class="col-sm-6 phone">
-                                                    <strong>P: <a href="tel:9706881446">(970)-688-1446</a></strong>
-                                                </div>
+                                        <div class="col-xs-12 cws-navbar-inner">
+                                            <div class="container cws-top-bar">
+                                                <div class="row">
+                                                    <div class="col-sm-6 phone">
 
-                                                <div class="col-sm-6 email">
-                                                    <strong>E: <a href="mailto:steve@a5adventures.com">steve@a5adventures.com</a></strong>
+                                                    </div>
+
+                                                    <div class="col-sm-6 email">
+                                                        <strong>P: <a href="tel:9706881446">(970)-688-1446</a> | E: <a href="mailto:steve@a5adventures.com">steve@a5adventures.com</a></strong>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="container">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <?php if ($site_logo != '') {?>
-                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-                                                <img class="img-responsive logo" style="max-width:45%;" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
-                                            </a>
-                                        <?php }; ?>
+                                    <div class="row">
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                            <?php if ($site_logo != '') {?>
+                                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
+                                                    <img class="img-responsive logo" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
+                                                </a>
+                                            <?php }; ?>
 
-                                    </div>
-                                    <div id="navbar" class="navbar-collapse collapse navbar-right">
-                                        <?php echo a5_nav(); ?>
+                                        </div>
+                                        <div id="navbar" class="navbar-collapse collapse navbar-right">
+                                            <?php echo a5_nav(); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </nav><!-- .main-navigation -->
