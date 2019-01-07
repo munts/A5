@@ -24,19 +24,22 @@ require_once( dirname(__FILE__) . '/lib/my_map.php');
  * Including all required style files in the theme
  */
 function a5_styles() {
+    wp_register_style('magnific-popup', get_template_directory_uri() .'/assets/css/magnific-popup.css', array(), null, 'all' );
     wp_register_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), '1', 'all' );
     wp_register_style('simple-line-icons', get_template_directory_uri() .'/assets/css/simple-line-icons.css', array(), null, 'all' );
     wp_register_style('animate',  get_template_directory_uri() .'/assets/css/animate.min.css', array(), null, 'all' );
     wp_register_style('animsition',  get_template_directory_uri() .'/assets/css/animsition.min.css', array(), null, 'all' );
-    wp_register_style('nivo', get_template_directory_uri() .'/assets/css/nivo-lightbox.css', array(), null, 'all' );
+    //wp_register_style('nivo', get_template_directory_uri() .'/assets/css/nivo-lightbox.css', array(), null, 'all' );
     wp_register_style('fontawesome', get_template_directory_uri() .'/assets/css/font-awesome.css', array(), null, 'all' );
     wp_register_style('owl-carousel', get_template_directory_uri() .'/assets/css/owl.carousel.css', array(), null, 'all' );
+    wp_enqueue_style( 'magnific-popup' );
     wp_register_style('styles', get_stylesheet_uri(), array(), '2.7.0','all' );
     wp_enqueue_style( 'bootstrap' );
-    wp_enqueue_style( 'nivo' );
+    //wp_enqueue_style( 'nivo' );
     wp_enqueue_style( 'animate' );
     wp_enqueue_style( 'fontawesome' );
     wp_enqueue_style( 'owl-carousel' );
+
     wp_enqueue_style( 'simple-line-icons' );
     wp_enqueue_style( 'animsition' );
     wp_enqueue_style( 'zoom' );
@@ -55,6 +58,7 @@ add_action('wp_enqueue_scripts', 'a5_styles');
 function a5_scripts() {
     wp_enqueue_script('tether', get_template_directory_uri() . '/assets/js/joinable/tether.min.js', array(), '1.0.0', true );
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script('magific', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.js', array(), '1.0.0', true );
     //wp_enqueue_script('animsition', get_template_directory_uri() . '/assets/js/joinable/animsition.min.js', array(), '1.0.0', true );
     //wp_enqueue_script('auto-grow', get_template_directory_uri() . '/assets/js/joinable/autogrow.min.js', array(), '1.0.0', true );
     //wp_enqueue_script('hover-intent', get_template_directory_uri() . '/assets/js/joinable/hoverIntent.js', array(), '1.0.0', true );
@@ -62,7 +66,8 @@ function a5_scripts() {
     wp_enqueue_script('nice-scroll', get_template_directory_uri() . '/assets/js/joinable/jquery.nicescroll.min.js', array(), '1.0.0', true );
     wp_enqueue_script('imagesloaded', get_template_directory_uri() . '/assets/js/joinable/imagesloaded.pkgd.min.js', array(), '1.0.0', true );
     wp_enqueue_script('parallax', get_template_directory_uri() . '/assets/js/joinable/parallax.js', array(), '1.0.0', true );
-    wp_enqueue_script('nivo', get_template_directory_uri() . '/assets/js/joinable/nivo-lightbox.min.js', array(), '1.0.0', true );
+
+    //wp_enqueue_script('nivo', get_template_directory_uri() . '/assets/js/joinable/nivo-lightbox.min.js', array(), '1.0.0', true );
     //wp_enqueue_script('mmenu', get_template_directory_uri() . '/assets/js/jquery.mmenu.all.min.js', array(), '1.0.0', true );
     wp_enqueue_script('owl', get_template_directory_uri() . '/assets/js/joinable/owl.carousel.js', array(), '1.0.0', true );
     wp_enqueue_script('plugins', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '', true);
@@ -89,6 +94,7 @@ function a5_setup() {
     add_image_size('people_thumb2', 447, 267, array( 'left', 'top' ) ); // Hard crop left top
     add_image_size('video_thumb', 600, 400, array( 'left', 'top' ) ); // Hard crop left top
     add_image_size('team-image', 300, 300, array( 'left', 'top' ) ); // Hard crop left top
+    add_image_size( 'gallery-thumb', 186, 318, true );
 }
 
 add_action('after_setup_theme', 'a5_setup');

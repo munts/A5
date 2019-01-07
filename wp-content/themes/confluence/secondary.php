@@ -25,7 +25,7 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
                     putRevSlider( $slider_id );
                 }
                 else
-                    echo '<img src="'. $imageUrl .'" style="width:100%;margin-top:-150px;" class="img-responsive">';
+                    echo '<img src="'. $imageUrl .'" style="width:100%;" class="img-responsive">';
 
                 ?>
 
@@ -38,9 +38,35 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
     <div class="white-section section-block">
         <div class="limit-width3">
             <div class="row">
-                <div class="col-xs-12 section-title-wrapper" style="padding:15px;">
+                <div class="col-xs-12 col-sm-6 section-title-wrapper" style="padding:15px;">
                     <h1 class="light-version"><?= the_title(); ?></h1>
                     <p><?= the_content(); ?></p>
+                    <div class="photos_gallery">
+                        <ul style="margin-bottom:60px;">
+                            <?php
+                            $images = get_field('gallery');
+                            if ($images):
+                                foreach ($images as $image):
+                                    $url = $image['url'];
+                                    $type = $image['type'];
+                                    //$icon = $image['icon'];
+                                    ?>
+                                    <li class="projectGalleryItem">
+                                        <a class="galleryImage" rel="gallery1" href="<?php echo $url; ?>">
+                                            <img src="<?php echo $image['sizes']['team-image']; ?>" alt="<?php echo basename($image['sizes']['team-image']); ?>" />
+                                        </a>
+                                    </li>
+                                <?php
+                                endforeach;
+                            endif;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="subscribe-form">
+                        <?php echo do_shortcode('[gravityform id="2"]'); ?>
+                    </div>
                 </div>
             </div>
         </div>
