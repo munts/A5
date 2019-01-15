@@ -9,16 +9,24 @@
 /**
  * Including all required lib files in the theme
  */
+require_once( dirname(__FILE__) . '/functions/custom_post_type.php');
 require_once( dirname(__FILE__) . '/lib/a5-site-options.php');
 require_once( dirname(__FILE__) . '/lib/a5-frontpage-options.php');
-require_once(dirname(__FILE__) . '/lib/press-functions.php');
-require_once(dirname(__FILE__) . '/lib/video-functions.php');
-require_once(dirname(__FILE__) . '/lib/secondary-page-functions.php');
-require_once(dirname(__FILE__) . '/lib/pricing-plan-functions.php');
+require_once( dirname(__FILE__) . '/lib/press-functions.php');
+require_once( dirname(__FILE__) . '/lib/toys-functions.php');
+require_once( dirname(__FILE__) . '/lib/destination-functions.php');
+require_once( dirname(__FILE__) . '/lib/video-functions.php');
+require_once( dirname(__FILE__) . '/lib/secondary-page-functions.php');
+require_once( dirname(__FILE__) . '/lib/pricing-plan-functions.php');
 require_once( dirname(__FILE__) . '/lib/aq_resizer.php');
 require_once( dirname(__FILE__) . '/lib/widgets.php');
 require_once( dirname(__FILE__) . '/lib/wp_bootstrap_navwalker.php');
 require_once( dirname(__FILE__) . '/lib/my_map.php');
+
+
+/* Include the custom post type */
+//include("functions/custom_post_type.php");
+/* end ov Include the custom post type */
 
 /**
  * Including all required style files in the theme
@@ -29,24 +37,22 @@ function a5_styles() {
     wp_register_style('simple-line-icons', get_template_directory_uri() .'/assets/css/simple-line-icons.css', array(), null, 'all' );
     wp_register_style('animate',  get_template_directory_uri() .'/assets/css/animate.min.css', array(), null, 'all' );
     wp_register_style('animsition',  get_template_directory_uri() .'/assets/css/animsition.min.css', array(), null, 'all' );
-    //wp_register_style('nivo', get_template_directory_uri() .'/assets/css/nivo-lightbox.css', array(), null, 'all' );
     wp_register_style('fontawesome', get_template_directory_uri() .'/assets/css/font-awesome.css', array(), null, 'all' );
     wp_register_style('owl-carousel', get_template_directory_uri() .'/assets/css/owl.carousel.css', array(), null, 'all' );
+    wp_register_style('flickity-css', get_template_directory_uri() .'/assets/css/flickity.css', array(), null, 'all' );
     wp_enqueue_style( 'magnific-popup' );
     wp_register_style('styles', get_stylesheet_uri(), array(), '2.7.0','all' );
     wp_enqueue_style( 'bootstrap' );
-    //wp_enqueue_style( 'nivo' );
     wp_enqueue_style( 'animate' );
     wp_enqueue_style( 'fontawesome' );
     wp_enqueue_style( 'owl-carousel' );
-
+    wp_enqueue_style( 'flickity-css' );
     wp_enqueue_style( 'simple-line-icons' );
     wp_enqueue_style( 'animsition' );
     wp_enqueue_style( 'zoom' );
     wp_enqueue_style( 'styles' );
     /*** Google fonts */
     wp_enqueue_style('one-opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,300');
-    //wp_enqueue_style('one-karla', '//fonts.googleapis.com/css?family=Karla:400,400i,700,700i');
     wp_enqueue_style('roboto', '//fonts.googleapis.com/css?family=Roboto:300,500');
     wp_enqueue_style('arvo', '//fonts.googleapis.com/css?family=Arvo:400,700');
 }
@@ -59,22 +65,15 @@ function a5_scripts() {
     wp_enqueue_script('tether', get_template_directory_uri() . '/assets/js/joinable/tether.min.js', array(), '1.0.0', true );
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script('magific', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.js', array(), '1.0.0', true );
-    //wp_enqueue_script('animsition', get_template_directory_uri() . '/assets/js/joinable/animsition.min.js', array(), '1.0.0', true );
-    //wp_enqueue_script('auto-grow', get_template_directory_uri() . '/assets/js/joinable/autogrow.min.js', array(), '1.0.0', true );
-    //wp_enqueue_script('hover-intent', get_template_directory_uri() . '/assets/js/joinable/hoverIntent.js', array(), '1.0.0', true );
     wp_enqueue_script('isotope', get_template_directory_uri() . '/assets/js/joinable/isotope.pkgd.min.js', array(), '1.0.0', true );
     wp_enqueue_script('nice-scroll', get_template_directory_uri() . '/assets/js/joinable/jquery.nicescroll.min.js', array(), '1.0.0', true );
     wp_enqueue_script('imagesloaded', get_template_directory_uri() . '/assets/js/joinable/imagesloaded.pkgd.min.js', array(), '1.0.0', true );
     wp_enqueue_script('parallax', get_template_directory_uri() . '/assets/js/joinable/parallax.js', array(), '1.0.0', true );
-
-    //wp_enqueue_script('nivo', get_template_directory_uri() . '/assets/js/joinable/nivo-lightbox.min.js', array(), '1.0.0', true );
-    //wp_enqueue_script('mmenu', get_template_directory_uri() . '/assets/js/jquery.mmenu.all.min.js', array(), '1.0.0', true );
     wp_enqueue_script('owl', get_template_directory_uri() . '/assets/js/joinable/owl.carousel.js', array(), '1.0.0', true );
+    wp_enqueue_script('flickity', get_template_directory_uri() . '/assets/js/joinable/flickity.pkgd.js', array(), '1.0.0', true );
     wp_enqueue_script('plugins', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '', true);
     wp_enqueue_script('settings', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '', true);
     /*** Easing javascript file */
-    //wp_enqueue_script('onepage-easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', array('jquery'), '', true);
-    //wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js', array('jquery'), '', true);
 
 }
 
@@ -117,7 +116,6 @@ add_action( 'init', 'my_theme_add_editor_styles' );
 
 /**
  * Primary Menu Extras
- *
  */
 class Main_Nav extends Walker_Nav_Menu {
 
@@ -141,7 +139,6 @@ class Main_Nav extends Walker_Nav_Menu {
             'menu-depth-' . $display_depth
         );
         $class_names = implode( ' ', $classes );
-
         // Build HTML for output.
         $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
     }
@@ -216,41 +213,38 @@ function a5_nav() {
 }
 
 
-//Creating Custom Post types for Activities
-function setup_activities_cpt(){
+//Creating Custom Post types for Gallery
+function setup_gallery_cpt(){
     $labels = array(
-        'name' => _x('activity', 'post type general name'),
-        'singular_name' => _x('activity', 'post type singular name'),
-        'add_new' => _x('Add New Activity', 'Video'),
-        'add_new_item' => __('Add New Activity'),
-        'edit_item' => __('Edit Activity'),
-        'new_item' => __('New Activity'),
-        'all_items' => __('All Activities'),
-        'view_item' => __('View Activity'),
-        'search_items' => __('Search Activities'),
-        'not_found' => __('No Activity Found'),
-        'not_found_in_trash' => __('No Activity found in the trash'),
+        'name' => _x('gallery', 'post type general name'),
+        'singular_name' => _x('gallery', 'post type singular name'),
+        'add_new' => _x('Add New', 'Gallery'),
+        'add_new_item' => __('Add New Gallery'),
+        'edit_item' => __('Edit Gallery'),
+        'new_item' => __('New Gallery'),
+        'all_items' => __('All galleries'),
+        'view_item' => __('View Gallery'),
+        'search_items' => __('Search galleries'),
+        'not_found' => __('No Gallery Found'),
+        'not_found_in_trash' => __('No Gallery found in the trash'),
         'parent_item_colon' => '',
-        'menu_name' => 'Activities'
+        'menu_name' => 'Gallery'
     );
     $args = array(
         'labels' => $labels,
-        'description' => 'Area Activities',
-        'rewrite' => array('slug' => 'activity'),
+        'description' => 'PKS Galleries',
+        'rewrite' => array('slug' => 'gallery'),
         'public' => true,
         'menu_position' => 5,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'page-attributes'),
+        'supports' => array('title', 'custom-fields'),
         'has_archive' => true,
-        'taxonomies' => array('category'),
+        'taxonomies' => array(''),
         'menu_icon' => 'dashicons-welcome-write-blog',
     );
-    register_post_type('activity', $args);
+    register_post_type('gallery', $args);
 }
-add_action('init', 'setup_activities_cpt');
+add_action('init', 'setup_gallery_cpt');
 
-/* Include the custom post type */
-include("functions/custom_post_type.php");
-/* end ov Include the custom post type */
 
 //Trm excerpt
 function a5_trim_excerpt($length) {
