@@ -1,6 +1,6 @@
 <?php
 /**
-Template Name: Secondary Page
+Template Name: Membership Page
 
  * @author Scott Taylor
  * @package One Confluence
@@ -41,37 +41,17 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
                 <div class="col-xs-12 col-sm-6 section-title-wrapper" style="padding:15px;">
                     <h1 class="light-version"><?= the_title(); ?></h1>
                     <p><?= the_content(); ?></p>
-                    <div class="photos_gallery">
-                        <ul style="margin-bottom:60px;">
-                            <?php
-                            $images = get_field('gallery');
-                            if ($images):
-                                foreach ($images as $image):
-                                    $url = $image['url'];
-                                    $type = $image['type'];
-                                    //$icon = $image['icon'];
-                                    ?>
-                                    <li class="projectGalleryItem">
-                                        <a class="galleryImage" rel="gallery1" href="<?php echo $url; ?>">
-                                            <img src="<?php echo $image['sizes']['team-image']; ?>" alt="<?php echo basename($image['sizes']['team-image']); ?>" />
-                                        </a>
-                                    </li>
-                                <?php
-                                endforeach;
-                            endif;
-                            ?>
-                        </ul>
-                    </div>
+                    <?php echo do_shortcode("[wp_flickity id=$gallery_id]"); ?>
                 </div>
                 <div class="col-sm-6">
                     <div class="subscribe-form">
-
+                        <?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php endwhile; ?>
+<?php endwhile; ?>
     <div class="subscriber" style="background-color:#000000;">
         <div class="container">
             <div class="row">

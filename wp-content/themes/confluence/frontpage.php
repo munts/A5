@@ -67,7 +67,7 @@ $allUrl = get_post_meta($post->ID, '_a5_all_url', true);
                 </div>
                 <div class="col-sm-6">
                     <div class="subscribe-form">
-                        <?php echo do_shortcode('[gravityform id="2"]'); ?>
+                        <?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
                     </div>
                 </div>
             </div>
