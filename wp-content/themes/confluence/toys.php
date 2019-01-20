@@ -14,7 +14,7 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
 ?>
     <div class="fullwidthbanner-container">
         <div class="row">
-            <div class="col-xs-12 toys-header">
+            <div class="col-xs-12 toys-header" style="min-height: 100px;">
                 <?php
                 if ($slider_id){
                     putRevSlider( $slider_id );
@@ -53,7 +53,7 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
                 if ( isset( $row_setup['row-class'] ) )
                     $row_class = esc_html( $row_setup['row-class'] );
                 if ( isset( $row_setup['content'] ) )
-                    $row_content = $row_setup['content'];
+                    $row_content = wpautop(( $row_setup['content'] ));
                 if ( isset( $row_setup['image_caption'] ) )
                     $img_caption = esc_html( $row_setup['image_caption'] );
                 if ( isset( $row_setup['gallery_id'] ) )
@@ -66,7 +66,7 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
 
                 <?php echo '<div class="row ' . (++$count%2 ? "odd" : "even") . '">'; ?>
 
-                    <?php if($count===1) {
+                <?php if($count == 1 || $count == 3 || $count == 5) {
                         ?>
                         <div class="col-sm-6">
                             <?= $row_content;?>
@@ -75,7 +75,6 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
                             <?php if($gallery_id != '') {
                                 //get_template_part('template-parts/flickity-gallery');
                                 echo do_shortcode("[wp_flickity id=$gallery_id]");
-
                             }
                             else {
                                echo $img;
