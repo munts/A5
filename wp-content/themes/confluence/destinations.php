@@ -10,7 +10,7 @@ get_header( 'two' );
 
 global $post;
 $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
-$slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true );
+$slider_id = get_post_meta( get_the_ID(), '_a5_destination_slider_id', true );
 ?>
     <div class="fullwidthbanner-container">
         <div class="row">
