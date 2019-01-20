@@ -46,7 +46,7 @@ function a5_register_frontpage_metabox() {
 
     $cmb_demo = new_cmb2_box( array(
         'id'            => $prefix . 'metabox',
-        'title'         => __( 'a5 Corner Custom Homepage Settings', 'cmb2' ),
+        'title'         => __( 'a5 Custom Homepage Settings', 'cmb2' ),
         'object_types'  => array( 'page', ), // Post type
         'show_on' => array('key' => 'page-template', 'value' => array('frontpage.php', 'coming-soon.php', 'test-slider.php')),
         'context'    => 'normal',
@@ -68,7 +68,7 @@ function a5_register_frontpage_metabox() {
 
     // Add fields for homepage featured activities
 
-    $cmb_demo->add_field( array(
+    /*$cmb_demo->add_field( array(
         'name' => __( 'Activities ID for the Featured Activities Carousel', 'cmb2' ),
         'desc' => __( 'This controls which activities gets shown on the homepage', 'cmb2' ),
         'id'   => $prefix . 'activities_id',
@@ -101,7 +101,7 @@ function a5_register_frontpage_metabox() {
         'type' => 'text_url',
         // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
         // 'repeatable' => true,
-    ) );
+    ) );*/
 
 
     $cmb_demo->add_field( array(

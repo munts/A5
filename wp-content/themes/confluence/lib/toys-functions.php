@@ -64,7 +64,8 @@ function a5_register_toys_repeatable_group_field_metabox() {
         'id'          => 'content',
         'type'        => 'wysiwyg',
         'options' => array(
-            'textarea_rows' => 5,
+            'textarea_rows' => 10,
+            'wpautop' => true
         ),
     ) );
 

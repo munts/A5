@@ -37,7 +37,7 @@ function berglund_register_slider_metabox() {
         'id'            => $prefix . 'metabox',
         'title'         => __( 'Secondary Hero or Slider Custom Fields', 'cmb2' ),
         'object_types'  => array( 'page', ), // Post type
-        'show_on'      => array( 'key' => 'page-template', 'value' => 'secondary.php' ),
+        'show_on'      => array( 'key' => 'page-template', 'value' => 'destinations.php' ),
 		'context'      => 'normal', //  'normal', 'advanced', or 'side'
         // 'context'    => 'normal',
         // 'priority'   => 'high',
@@ -47,7 +47,7 @@ function berglund_register_slider_metabox() {
     ) );
 
     $cmb_demo->add_field( array(
-        'name' => __( 'Slider ID for the this project   ', 'cmb2' ),
+        'name' => __( 'Slider ID for the this destination   ', 'cmb2' ),
         'desc' => __( 'field description (optional)', 'cmb2' ),
         'id'   => $prefix . 'slider_id',
         'type' => 'text',
