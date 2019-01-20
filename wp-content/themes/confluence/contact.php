@@ -1,6 +1,6 @@
 <?php
 /**
-Template Name: Membership Page
+Template Name: Contact Page
 
  * @author Scott Taylor
  * @package One Confluence
@@ -38,15 +38,15 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
     <div class="white-section section-block">
         <div class="limit-width3">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 section-title-wrapper" style="padding:15px;">
-                    <h1 class="light-version"><?= the_title(); ?></h1>
-                    <p><?= the_content(); ?></p>
-                    <?php echo do_shortcode("[wp_flickity id=7]"); ?>
-                </div>
+
                 <div class="col-sm-6">
                     <div class="subscribe-form">
                         <?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
                     </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 section-title-wrapper" style="padding:30px 60px;">
+                    <h1 class="light-version"><?= the_title(); ?></h1>
+                    <p><?= the_content(); ?></p>
                 </div>
             </div>
         </div>
