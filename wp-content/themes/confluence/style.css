@@ -2361,6 +2361,8 @@ h3.gform_title {font-family: 'Open Sans', sans-serif;font-weight:300 !important;
 
 .subscribe-form {
     float: right;
+    padding-top:30px;
+    margin-top:15px;
 }
 
 .subscriber h4{
@@ -2800,6 +2802,8 @@ img.img-responsive.logo {
 .white-section.section-block {
     padding-bottom: 60px;
 }
+
+.a5_icon {max-width:50%;margin:10px auto;}
 
 
 @media (min-width: 768px) {
