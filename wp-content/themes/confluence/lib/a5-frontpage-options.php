@@ -66,42 +66,23 @@ function a5_register_frontpage_metabox() {
         // 'repeatable' => true,
     ) );
 
-    // Add fields for homepage featured activities
-
-    /*$cmb_demo->add_field( array(
-        'name' => __( 'Activities ID for the Featured Activities Carousel', 'cmb2' ),
-        'desc' => __( 'This controls which activities gets shown on the homepage', 'cmb2' ),
-        'id'   => $prefix . 'activities_id',
+    $cmb_demo->add_field( array(
+        'name' => __( 'Flickity Gallery ID', 'cmb2' ),
+        'desc' => __( 'This controls which gallery gets shown below the content', 'cmb2' ),
+        'id'   => $prefix . 'flickity_id',
         'type' => 'text',
         // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
         // 'repeatable' => true,
     ) );
 
     $cmb_demo->add_field( array(
-        'name' => esc_html__( 'Featured Section Title', 'cmb2' ),
-        'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'featured_section',
-        'type' => 'text_medium',
-    ) );
-
-
-    $cmb_demo->add_field( array(
-        'name' => esc_html__( 'See All Activities URL', 'cmb2' ),
-        'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'all_url',
-        'type' => 'text_url',
+        'name' => __( 'Gravity Form ID', 'cmb2' ),
+        'desc' => __( 'This controls which form gets shown on the homepage', 'cmb2' ),
+        'id'   => $prefix . 'gravity_form_id',
+        'type' => 'text',
         // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
         // 'repeatable' => true,
     ) );
-
-    $cmb_demo->add_field( array(
-        'name' => esc_html__( 'Membership Plans & Pricing URL', 'cmb2' ),
-        'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'plans_url',
-        'type' => 'text_url',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );*/
 
 
     $cmb_demo->add_field( array(
@@ -125,6 +106,76 @@ function a5_register_frontpage_metabox() {
         'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
         'id'   => $prefix . 'explore_img',
         'type' => 'file',
+    ) );
+
+
+
+}
+
+add_action( 'cmb2_admin_init', 'a5_register_grid_repeatable_group_field_metabox' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function a5_register_grid_repeatable_group_field_metabox() {
+    $prefix = 'a5_front_';
+
+    /**
+     * Repeatable Field Groups
+     */
+    $cmb_group = new_cmb2_box( array(
+        'id'           => $prefix . 'metabox',
+        'title'        => esc_html__( 'Repeating Field Group', 'cmb2' ),
+        'object_types' => array( 'page' ),
+        'show_on' => array('key' => 'page-template', 'value' => array('frontpage.php')),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // true to keep the metabox closed by default
+    ) );
+
+    // $group_field_id is the field id string, so in this case: $prefix . 'demo'
+    $group_field_id = $cmb_group->add_field( array(
+        'id'          => 'a5_benefits_group',
+        'type'        => 'group',
+        'description' => esc_html__( 'Generates reusable form entries', 'cmb2' ),
+        'options'     => array(
+            'group_title'   => esc_html__( 'Benefit {#}', 'cmb2' ), // {#} gets replaced by row number
+            'add_button'    => esc_html__( 'Add Another Benefit', 'cmb2' ),
+            'remove_button' => esc_html__( 'Remove Benefit', 'cmb2' ),
+            'sortable'      => true, // beta
+            // 'closed'     => true, // true to have the groups closed by default
+        ),
+    ) );
+
+    /**
+     * Group fields works the same, except ids only need
+     * to be unique to the group. Prefix is not needed.
+     *
+     * The parent field's id needs to be passed as the first argument.
+     */
+
+    $cmb_group->add_group_field( $group_field_id, array(
+        'name'        => esc_html__( 'Benefit Content', 'cmb2' ),
+        'description' => esc_html__( 'Add and format the text for this Benefit here', 'cmb2' ),
+        'id'          => 'content',
+        'type'        => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 5,
+        ),
+    ) );
+
+    $cmb_group->add_group_field( $group_field_id, array(
+        'name' => esc_html__( 'Static Image or icon', 'cmb2' ),
+        'id'   => 'image',
+        'description' => esc_html__( 'Use this field for a static image or icon', 'cmb2' ),
+        'type' => 'file',
+    ) );
+
+    $cmb_group->add_group_field( $group_field_id, array(
+        'name' => esc_html__( 'Image or Icon Caption', 'cmb2' ),
+        'id'   => 'image_caption',
+        'type' => 'text',
     ) );
 
 }

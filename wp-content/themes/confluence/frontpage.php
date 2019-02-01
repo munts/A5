@@ -19,6 +19,7 @@ $exploreContent = get_post_meta($post->ID, '_a5_explore_content', true);
 $exploreImg = get_post_meta($post->ID, '_a5_explore_img', true);
 $plansUrl = get_post_meta($post->ID, '_a5_plans_url', true);
 $allUrl = get_post_meta($post->ID, '_a5_all_url', true);
+$gravity_form_id = get_post_meta($post->ID, '_a5_gravity_form_id', true);
 
 //$team_id = get_post_meta($post->ID, '_one_front_team_id', true);
 //$slider_id = get_post_meta($post->ID, '_one_front_slider_id', true);
@@ -40,34 +41,46 @@ $allUrl = get_post_meta($post->ID, '_a5_all_url', true);
         <div class="limit-width3">
             <?php while ( have_posts() ) : the_post(); ?>
             <div class="row">
-                <div class="col-xs-12 col-md-6 section-title-wrapper" style="padding:15px 60px;">
+                <div class="col-xs-12 col-sm-6 col-md-8 section-title-wrapper" style="padding:15px 60px;">
                         <h1 class="light-version" style="color:#818181;"><?= the_title(); ?></h1>
                         <p><?= the_content(); ?></p>
-                    <div class="photos_gallery">
-                        <ul style="margin-bottom:60px;">
-                            <?php
-                            $images = get_field('gallery');
-                            if ($images):
-                                foreach ($images as $image):
-                                    $url = $image['url'];
-                                    $type = $image['type'];
-                                    //$icon = $image['icon'];
+                    <?php //get_template_part('benefits'); ?>
+                    <div class="flickity_gallery" style="margin-top:30px;">
+                        <?php
+                        $flickity_id = get_post_meta( get_the_ID(), '_a5_flickity_id', true );
+                        if($flickity_id != '') {
+                            //get_template_part('template-parts/flickity-gallery');
+                            echo do_shortcode("[wp_flickity id=$flickity_id]");
+                        }
+                        else { ?>
+                            <div class="photos_gallery">
+                                <ul style="margin-bottom:60px;">
+                                    <?php
+                                    $images = get_field('gallery');
+                                    if ($images):
+                                        foreach ($images as $image):
+                                            $url = $image['url'];
+                                            $type = $image['type'];
+                                            //$icon = $image['icon'];
+                                            ?>
+                                            <li class="projectGalleryItem">
+                                                <a class="galleryImage" rel="gallery1" href="<?php echo $url; ?>">
+                                                    <img src="<?php echo $image['sizes']['team-image']; ?>" alt="<?php echo basename($image['sizes']['team-image']); ?>" />
+                                                </a>
+                                            </li>
+                                        <?php
+                                        endforeach;
+                                    endif;
                                     ?>
-                                    <li class="projectGalleryItem">
-                                        <a class="galleryImage" rel="gallery1" href="<?php echo $url; ?>">
-                                            <img src="<?php echo $image['sizes']['team-image']; ?>" alt="<?php echo basename($image['sizes']['team-image']); ?>" />
-                                        </a>
-                                    </li>
-                                <?php
-                                endforeach;
-                            endif;
-                            ?>
-                        </ul>
+                                </ul>
+                            </div>
+                       <?php }?>
+
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 col-md-4">
                     <div class="subscribe-form">
-                        <?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
+                        <?php echo do_shortcode('[gravityform id="' . $gravity_form_id . '" title="false" description="false"]'); ?>
                     </div>
                 </div>
             </div>
