@@ -16,6 +16,7 @@ $featuredImg = get_the_post_thumbnail_url($post->ID, 'full' );
 
 $exploreTitle = get_post_meta($post->ID, '_a5_explore_title', true);
 $exploreContent = get_post_meta($post->ID, '_a5_explore_content', true);
+$benefitsContent = get_post_meta($post->ID, '_a5_benefits_content', true);
 $exploreImg = get_post_meta($post->ID, '_a5_explore_img', true);
 $plansUrl = get_post_meta($post->ID, '_a5_plans_url', true);
 $allUrl = get_post_meta($post->ID, '_a5_all_url', true);
@@ -44,8 +45,16 @@ $gravity_form_id = get_post_meta($post->ID, '_a5_gravity_form_id', true);
                 <div class="col-xs-12 col-sm-6 col-md-8 section-title-wrapper" style="padding:15px 60px;">
                         <h1 class="light-version" style="color:#818181;"><?= the_title(); ?></h1>
                         <p><?= the_content(); ?></p>
-                    <?php //get_template_part('benefits'); ?>
-                    <div class="flickity_gallery" style="margin-top:30px;">
+                        <p><?= $benefitsContent; ?></p>
+
+                    <?php get_template_part('template-parts/benefits'); ?>
+
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="membership-inquiry-form">
+                        <?php echo do_shortcode('[gravityform id="' . $gravity_form_id . '" title="false" description="false"]'); ?>
+                    </div>
+                    <div class="flickity_gallery" style="height:auto;width:100%;margin-top:30px;display:block;position:relative;">
                         <?php
                         $flickity_id = get_post_meta( get_the_ID(), '_a5_flickity_id', true );
                         if($flickity_id != '') {
@@ -74,13 +83,8 @@ $gravity_form_id = get_post_meta($post->ID, '_a5_gravity_form_id', true);
                                     ?>
                                 </ul>
                             </div>
-                       <?php }?>
+                        <?php }?>
 
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="subscribe-form">
-                        <?php echo do_shortcode('[gravityform id="' . $gravity_form_id . '" title="false" description="false"]'); ?>
                     </div>
                 </div>
             </div>
@@ -98,7 +102,7 @@ $gravity_form_id = get_post_meta($post->ID, '_a5_gravity_form_id', true);
                 </div>
                 <div class="col-sm-6">
                     <div class="subscribe-form">
-                        <?php echo do_shortcode('[gravityform id="1"]'); ?>
+                        <?php echo do_shortcode('[gravityform id="1" title="false" description="false"]'); ?>
                     </div>
                 </div>
             </div>

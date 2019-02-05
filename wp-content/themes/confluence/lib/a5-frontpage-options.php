@@ -84,31 +84,15 @@ function a5_register_frontpage_metabox() {
         // 'repeatable' => true,
     ) );
 
-
     $cmb_demo->add_field( array(
-        'name' => esc_html__( 'Explore Title', 'cmb2' ),
-        'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'explore_title',
-        'type' => 'text_medium',
-    ) );
-
-    $cmb_demo->add_field( array(
-        'name'    => esc_html__( 'Explore Content', 'cmb2' ),
+        'name'    => esc_html__( 'Benefits Content', 'cmb2' ),
         'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-        'id'      => $prefix . 'explore_content',
+        'id'      => $prefix . 'benefits_content',
         'type'    => 'wysiwyg',
         'options' => array(
-            'textarea_rows' => 5,
+            'textarea_rows' => 10,
         ),
     ) );
-    $cmb_demo->add_field( array(
-        'name' => esc_html__( 'Explore Image', 'cmb2' ),
-        'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'explore_img',
-        'type' => 'file',
-    ) );
-
-
 
 }
 
@@ -155,14 +139,20 @@ function a5_register_grid_repeatable_group_field_metabox() {
      * The parent field's id needs to be passed as the first argument.
      */
 
-    $cmb_group->add_group_field( $group_field_id, array(
-        'name'        => esc_html__( 'Benefit Content', 'cmb2' ),
+    /*$cmb_group->add_group_field( $group_field_id, array(
+        'name'        => esc_html__( 'Benefit Description', 'cmb2' ),
         'description' => esc_html__( 'Add and format the text for this Benefit here', 'cmb2' ),
         'id'          => 'content',
         'type'        => 'wysiwyg',
         'options' => array(
             'textarea_rows' => 5,
         ),
+    ) );*/
+
+    $cmb_group->add_group_field( $group_field_id, array(
+        'name' => esc_html__( 'Image or Icon Caption', 'cmb2' ),
+        'id'   => 'image_caption',
+        'type' => 'text',
     ) );
 
     $cmb_group->add_group_field( $group_field_id, array(
@@ -172,10 +162,11 @@ function a5_register_grid_repeatable_group_field_metabox() {
         'type' => 'file',
     ) );
 
+
     $cmb_group->add_group_field( $group_field_id, array(
-        'name' => esc_html__( 'Image or Icon Caption', 'cmb2' ),
-        'id'   => 'image_caption',
-        'type' => 'text',
+        'name' => esc_html__( 'URL', 'cmb2' ),
+        'id'   => 'benefit_url',
+        'type' => 'text_url',
     ) );
 
 }
