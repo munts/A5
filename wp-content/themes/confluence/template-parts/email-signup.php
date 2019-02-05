@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h4>Sign-Up to Receive Our Promotional Emails</h4>
+                <h4>Join our mailing list!</h4>
             </div>
             <div class="col-sm-6">
                 <div class="subscribe-form">
