@@ -2152,7 +2152,6 @@ input#s {
 }
 
 .gform_wrapper {
-    margin: 10px 0 20px 0 !important;
     width: 100%;
     display:inline-block;
     vertical-align: bottom;
@@ -2361,16 +2360,21 @@ h3.gform_title {font-family: 'Open Sans', sans-serif;font-weight:300 !important;
 
 .subscribe-form {
     float: right;
-    padding-top:30px;
-    margin-top:15px;
 }
 
 .subscriber h4{
     color: #ffffff !important;
     font-weight:bold;
     font-size:22px;
-    padding-top:28px;
+    padding-top:16px;
 }
+
+.membership-inquiry-form {
+    padding-top:35px;
+}
+
+h4.activity-toy {text-align: center;}
+
 
 .gform_wrapper .gform_heading {
     width: 100%;
@@ -2803,7 +2807,31 @@ img.img-responsive.logo {
     padding-bottom: 60px;
 }
 
-.a5_icon {max-width:50%;margin:10px auto;}
+.a5_icon {max-width:90%;margin:10px auto;}
+
+div.gform_wrapper .gfield input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']), div.gform_wrapper .gfield select {
+    background-color: #ccc;
+    border: 0;
+    height:50px;
+}
+
+div.gform_wrapper .gfield textarea {
+    border: 0;
+    background-color: #cccccc;
+}
+
+@media only screen and (min-width: 641px) {
+    .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
+        width: 100% !important;
+        height: 50px !important;
+        margin:0 !important;
+    }
+    .gform_wrapper form.gf_simple_horizontal div.gform_footer.top_label input[type=submit], .gform_wrapper form.gf_simple_horizontal div.gform_footer.top_label input[type=button], .gform_wrapper form.gf_simple_horizontal div.gform_footer.top_label input[type=image] {
+        height: 50px;
+        margin-bottom: 0 !important;
+    }
+}
+
 
 
 @media (min-width: 768px) {

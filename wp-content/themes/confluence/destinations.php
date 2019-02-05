@@ -53,7 +53,7 @@ $slider_id = get_post_meta( get_the_ID(), '_a5_destination_slider_id', true );
             if ( isset( $row_setup['row-class'] ) )
                 $row_class = esc_html( $row_setup['row-class'] );
             if ( isset( $row_setup['content'] ) )
-                $row_content = $row_setup['content'];
+                $row_content = wpautop(( $row_setup['content'] ));
             if ( isset( $row_setup['image_caption'] ) )
                 $img_caption = esc_html( $row_setup['image_caption'] );
             if ( isset( $row_setup['gallery_id'] ) )
