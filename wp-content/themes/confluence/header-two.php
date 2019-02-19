@@ -9,6 +9,8 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head();
     $site_logo = a5_get_option( 'logo' );
+    $fb = a5_get_option( 'a5_facebookurl' );
+    $instagram = a5_get_option( 'instagram_val' );
     ?>
 </head>
 
@@ -28,7 +30,7 @@
     <header class="header-type-1">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12 col-md-12">
                     <div class="header-navigation">
                         <?php if ( has_nav_menu( 'frontpage-menu' ) ) : ?>
                             <nav id="site-navigation" class="navbar navbar-default navbar-fixed-top" role="navigation" aria-label="">
@@ -37,12 +39,12 @@
                                         <div class="col-xs-12 cws-navbar-inner">
                                             <div class="container cws-top-bar">
                                                 <div class="row">
-                                                    <div class="col-sm-6 phone">
+                                                    <div class="col-xs-12 col-sm-6 phone">
 
                                                     </div>
 
-                                                    <div class="col-sm-6 email">
-                                                        <strong>P: <a href="tel:9706881446">(970)-688-1446</a> | E: <a href="mailto:steve@a5adventures.com">steve@a5adventures.com</a></strong>
+                                                    <div class="col-xs-12 col-sm-6 email">
+                                                        <strong>P: <a href="tel:9706881446">(970)-688-1446</a> | E: <a href="mailto:steve@a5adventures.com">steve@a5adventures.com</a>&nbsp; <a href="<?= $fb; ?>" target="_blank"><i class="icon-social-facebook"></i></a><a href="<?= $instagram; ?>" target="_blank"><i class="icon-social-instagram"></i></a></strong>
                                                     </div>
                                                 </div>
                                             </div>

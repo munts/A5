@@ -68,10 +68,10 @@ $slider_id = get_post_meta( get_the_ID(), '_a5_destination_slider_id', true );
             <?php //echo $count; ?>
             <?php if($count == 1 || $count == 3 || $count == 5) {
                 ?>
-                <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-6">
                     <?= $row_content;?>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-6">
                     <?php if($gallery_id != '') {
                         //get_template_part('template-parts/flickity-gallery');
                         echo do_shortcode("[wp_flickity id=$gallery_id]");
@@ -83,7 +83,7 @@ $slider_id = get_post_meta( get_the_ID(), '_a5_destination_slider_id', true );
                 </div>
             <?php }
             else { ?>
-                <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-6">
                     <?php if($gallery_id != '') {
                         //get_template_part('template-parts/flickity-gallery');
                         echo do_shortcode("[wp_flickity id=$gallery_id]");
@@ -93,7 +93,7 @@ $slider_id = get_post_meta( get_the_ID(), '_a5_destination_slider_id', true );
                     }?>
 
                 </div>
-                <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-6">
                     <?= $row_content;?>
                 </div>
             <?php } ?>
