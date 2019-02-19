@@ -22,6 +22,8 @@ html {
     /* 2 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* carousel height, as percentage of width */
@@ -3026,6 +3028,7 @@ a img.aligncenter {
     color: #000000;
 }
 
+.icon-social-facebook, .icon-social-instagram{font-weight:900;padding:0 2px;}
 
 
 

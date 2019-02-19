@@ -54,7 +54,7 @@ $featuredImg = get_the_post_thumbnail_url($post->ID, 'full' );
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h4>Sign-Up to Receive Updates</h4>
+                    <h4>Join our mailing list!</h4>
                 </div>
                 <div class="col-sm-6">
                     <div class="subscribe-form">
