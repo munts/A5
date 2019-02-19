@@ -50,7 +50,7 @@ $gravity_form_id = get_post_meta($post->ID, '_a5_gravity_form_id', true);
                     <?php get_template_part('template-parts/benefits'); ?>
 
                 </div>
-                <div class="col-sm-6 col-md-4">
+                <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="membership-inquiry-form">
                         <?php echo do_shortcode('[gravityform id="' . $gravity_form_id . '" title="false" description="false"]'); ?>
                     </div>
@@ -97,10 +97,10 @@ $gravity_form_id = get_post_meta($post->ID, '_a5_gravity_form_id', true);
     <div class="subscriber" style="background-color:#000000;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <h4>Sign-Up to Receive Our Promotional Emails</h4>
+                <div class="col-xs-12 col-sm-6">
+                    <h4>Join our mailing list!</h4>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-6">
                     <div class="subscribe-form">
                         <?php echo do_shortcode('[gravityform id="1" title="false" description="false"]'); ?>
                     </div>
