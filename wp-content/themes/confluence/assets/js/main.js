@@ -192,7 +192,7 @@
 
   // Carousels
 
-  $("#featured-activities .owl-carousel").owlCarousel({
+ /* $("#featured-activities .owl-carousel").owlCarousel({
     //items: 4,
     loop:true,
     responsiveClass:true,
@@ -218,11 +218,11 @@
         //loop: false
       }
     }
-  });
+  });*/
 
     // magnific popup
 
-    $(document).ready(function() {
+    /*$(document).ready(function() {
 
 
         $('.filter-btn').on('click', function(e){
@@ -286,7 +286,7 @@
 
         });*/
 
-    });
+    /* }); */
 
  /* $('#featured-activities .owl-carousel').owlCarousel({
     loop:true,

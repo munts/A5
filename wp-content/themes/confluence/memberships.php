@@ -35,11 +35,17 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
                 <div class="col-xs-12 col-sm-6 col-md-8 section-title-wrapper" style="padding:15px;">
                     <h1 class="light-version"><?= the_title(); ?></h1>
                     <p><?= the_content(); ?></p>
-                    <?php echo do_shortcode("[wp_flickity id=7]"); ?>
+
+                    <?php get_template_part('template-parts/membership-benefits'); ?>
+
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="subscribe-form">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="membership-inquiry-form">
                         <?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
+                    </div>
+
+                    <div class="flickity_gallery" style="height:auto;width:100%;margin-top:30px;display:block;position:relative;">
+                        <?php echo do_shortcode("[wp_flickity id=7]"); ?>
                     </div>
                 </div>
             </div>
@@ -49,10 +55,10 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
     <div class="subscriber" style="background-color:#000000;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-6">
                     <h4>Join Our Mailing List!</h4>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-6">
                     <div class="subscribe-form">
                         <?php echo do_shortcode('[gravityform id="1"]'); ?>
                     </div>
