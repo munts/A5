@@ -47,6 +47,9 @@ $slider_id = get_post_meta( get_the_ID(), '_berglund_secondary_slider_id', true 
                 <div class="col-xs-12 col-sm-6 section-title-wrapper" style="padding:30px 60px;">
                     <h1 class="light-version"><?= the_title(); ?></h1>
                     <p><?= the_content(); ?></p>
+                    <div id="contact-social">
+                    <a href="<?= $fb; ?>" target="_blank"><i class="icon-social-facebook"></i></a><a href="<?= $instagram; ?>" target="_blank"><i class="icon-social-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
