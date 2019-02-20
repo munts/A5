@@ -24,6 +24,7 @@ html {
     /* 2 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* carousel height, as percentage of width */
@@ -467,13 +468,14 @@ th {
 
 body {
     font-family: "Open Sans",Arial,sans-serif;
-    font-size: 15px;
-    font-weight:300;
+    font-size: 16px;
+    font-weight:400;
     line-height: 1.6;
     background-color: #ffffff;
-    color: #000000;
+    color: #373737;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 html, body {
@@ -496,6 +498,18 @@ hr {
     width: 100%;
     height: 0;
     margin: 0;
+}
+
+#menu-footer li a{color:#ea1f24;}
+
+#foot-2-inner {
+    width: 280px;
+    margin: 5px auto;
+}
+
+#foot-phone a,#foot-email a{
+    color: #ea1f24;
+    font-size: 1.5em;
 }
 
 .site-wrapper {
@@ -942,9 +956,7 @@ blockquote {
     margin-bottom: 0;
 }
 
-.site-footer .widgetized-area .widget a {
-    color: #7fd000;
-}
+
 
 .site-footer .widgetized-area .widget a:hover {
     color: #ffffff;
@@ -2461,9 +2473,7 @@ h4.activity-toy {text-align: center;}
     background: none;
     color: #fff;
 }
-.site-footer .widgetized-area .widget a {
-    color: #ffffff;
-}
+
 #topFoot li address a {
     color: #ea1921;
 
@@ -3027,8 +3037,14 @@ a img.aligncenter {
 .navbar-default .navbar-nav > li > a {
     color: #000000;
 }
+.foot-social{padding: 10px 0;}
 
-.icon-social-facebook, .icon-social-instagram{font-weight:900;padding:0 2px;}
+.icon-social-facebook, .icon-social-instagram{font-weight:900;padding:10px 5px 10px 0;}
+
+i.icon-social-facebook,i.icon-social-instagram {
+    font-size: 2.25em;
+    font-weight: 400;
+}
 
 
 
