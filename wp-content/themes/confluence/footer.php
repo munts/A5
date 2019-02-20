@@ -2,15 +2,15 @@
 <footer class="site-footer">
             <?php
             $topFooterBg = a5_get_option( 'topFootBg' );
-            $facebookUrl = a5_get_option( 'a5_facebookurl' );
+            $fb = a5_get_option( 'a5_facebookurl' );
+            $instagram = a5_get_option( 'instagram_val' );
             $twitter_val = a5_get_option('twitter_val');
-            $instagram_val = a5_get_option('instagram_val');
             $ytube_val = a5_get_option('ytube_val');
             ?>
             <div id="topFoot" class="widgetized-area" style="background-image: url('<?= $topFooterBg; ?>'); background-size:cover;padding:60px 0; ">
                 <div class="limit-width3 wow fadeIn" data-wow-duration="0.7s" data-wow-delay="0.4s">
                     <div class="row">
-                        <div class="col-sm-6 col-md-3">
+                        <div class="col-xs-12 col-sm-4 col-md-3">
                             <div class="widget">
                                 <div class="contact-info">
                                     <?php if ( ! dynamic_sidebar('footer1')) : ?>
@@ -18,25 +18,30 @@
                                 </div>
                             </div>
                         </div> <!-- /.col-md-3 -->
-                        <div class="col-sm-6 col-md-3">
-                            <div class="widget sign-up">
-                                <?php if ( ! dynamic_sidebar('footer2')) : ?>
-                                <?php endif; ?>
-                            </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6">
+                            <div class="widget">
+                                <div class="footer-2">
+                                    <div id="foot-2-inner">
+                                        <div id="foot-phone">
+                                            <a href="tel:970.688.1446">970.688.1446</a>
+                                        </div>
+                                        <div id="foot-email">
+                                            <a href="mailto:info@a5adventures.com">info@a5adventures.com</a>
+                                        </div>
+                                        <div id="foot-social">
+                                            <a href="<?= $fb; ?>" target="_blank"><i class="icon-social-facebook"></i></a><a href="<?= $instagram; ?>" target="_blank"><i class="icon-social-instagram"></i></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                               </div>
                         </div> <!-- /.col-md-3 -->
-                        <div class="col-sm-6 col-md-3">
+                        <div class="col-xs-12 col-sm-4 col-md-3">
                             <div class="widget sign-up">
                                 <?php if ( ! dynamic_sidebar('footer3')) : ?>
                                 <?php endif; ?>
                             </div>
                         </div> <!-- /.col-md-3 -->
-                        <div class="col-sm-6 col-md-3">
-                            <div class="widget sign-up">
-                                <?php if ( ! dynamic_sidebar('footer4')) : ?>
-                                <?php endif; ?>
-                            </div>
-                        </div> <!-- /.col-md-3 -->
-
                     </div> <!-- /.row -->
                 </div> <!-- /.limit-width -->
             </div> <!-- /.widgetized-area -->
