@@ -2795,7 +2795,7 @@ button.owl-prev {
 }
 
 .container > .navbar-header, .container-fluid > .navbar-header {
-    width:40%;
+    width: 250px;
 }
 
 .navbar-nav {
@@ -2803,7 +2803,7 @@ button.owl-prev {
 }
 
 img.img-responsive.logo {
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .navbar-default .navbar-toggle {
